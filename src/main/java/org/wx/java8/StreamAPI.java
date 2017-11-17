@@ -20,10 +20,6 @@ public class StreamAPI {
         persions.add(new Persion("p8",17));
 
     }
-    public static void main(String[] args) {
-
-
-    }
     public void createStream(){
         Persion p1 = new Persion("p1",12);
         Persion p2 = new Persion("p2",13);
@@ -32,6 +28,7 @@ public class StreamAPI {
         Persion p5 = new Persion("p5",16);
 
         boolean b = Stream.of(p1, p2, p3, p4, p5).anyMatch(t -> t.getAge() == 16);
+        
         System.out.println(b);
     }
 }
