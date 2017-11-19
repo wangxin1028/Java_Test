@@ -3,9 +3,13 @@ package org.wx.java8;
 import org.wx.entity.Persion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * Stream api 测试
+ */
 public class StreamAPI {
     private static List<Persion> persions = null;
     static{
@@ -20,15 +24,23 @@ public class StreamAPI {
         persions.add(new Persion("p8",17));
 
     }
+
+    /**
+     * 获取stream的几种方式
+     */
     public void createStream(){
+        //stream.of
         Persion p1 = new Persion("p1",12);
         Persion p2 = new Persion("p2",13);
         Persion p3 = new Persion("p3",14);
         Persion p4 = new Persion("p4",15);
         Persion p5 = new Persion("p5",16);
+        Stream<Persion> stream1 = Stream.of(p1, p2, p3, p4, p5);
+        System.out.println(stream1);
 
-        boolean b = Stream.of(p1, p2, p3, p4, p5).anyMatch(t -> t.getAge() == 16);
-        
-        System.out.println(b);
+        //Arrays.stream
+        Persion[] parray = new Persion[]{p1,p2,p3,p4,p5};
+        Stream<Persion> stream = Arrays.stream(parray);
+        System.out.println(stream);
     }
 }
