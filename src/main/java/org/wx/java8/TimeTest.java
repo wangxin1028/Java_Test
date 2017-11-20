@@ -5,5 +5,4 @@ public class TimeTest {
 		TimeAPI time = new TimeAPI();
 		time.testInstant();
 	}
-	
 }
