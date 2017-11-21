@@ -6,7 +6,11 @@ import java.util.concurrent.RecursiveTask;
  * fork join 在1.7的时候已经有了，但是使用不方便，1.8使用更方便了
  */
 public class ForkJoin extends RecursiveTask<Long> {
-    private long start;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3585858193413032923L;
+	private long start;
     private long end;
 
     public ForkJoin(long start, long end) {
