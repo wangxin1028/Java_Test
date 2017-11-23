@@ -1,9 +1,21 @@
 package org.wx.nio;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 
 public class BufferAPI {
-    public void test(){
+	public void test2() {
+        String s = "abc";
+        CharBuffer cb = CharBuffer.allocate(1024);
+        
+        cb.put(s);
+        cb.flip();
+        if(cb.hasRemaining()) {
+        	System.out.println(cb.remaining());
+        }
+        
+	}
+    public void test1(){
         String s = "abc";
         ByteBuffer buffer = ByteBuffer.allocate(1024);
         System.out.println(buffer.position());

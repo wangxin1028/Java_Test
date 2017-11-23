@@ -3,6 +3,7 @@ package org.wx.nio;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -11,6 +12,32 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class FileRW {
+	public void testCharset() {
+		
+	}
+	public void testFensanJuji() {
+		RandomAccessFile raf;
+		try {
+			raf = new RandomAccessFile("conf/text.txt", "rw");
+			FileChannel channel = raf.getChannel();
+			
+			ByteBuffer[] bbs = {ByteBuffer.allocate(7),ByteBuffer.allocate(9)};
+			
+			channel.read(bbs);
+			 
+			for(ByteBuffer bb : bbs) {
+				bb.flip();
+				System.out.println(new String(bb.array(),0,bb.limit()));
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 	public void testChannelIO() {
 		try {
 			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala1.jpg"),StandardOpenOption.READ);
