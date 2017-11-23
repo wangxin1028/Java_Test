@@ -1,4 +1,4 @@
-package org.wx.nio;
+package nio;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
