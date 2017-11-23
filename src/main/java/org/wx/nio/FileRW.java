@@ -12,7 +12,19 @@ import java.nio.file.StandardOpenOption;
 
 public class FileRW {
 	public void testChannelIO() {
+		try {
+			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala1.jpg"),StandardOpenOption.READ);
+			FileChannel outchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala3.jpg"),StandardOpenOption.WRITE,StandardOpenOption.READ,StandardOpenOption.CREATE);
 		
+			inchannel.transferTo(0, inchannel.size(), outchannel);
+			
+			inchannel.close();
+			outchannel.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 	public void testMapRedirect() {
 		try {
