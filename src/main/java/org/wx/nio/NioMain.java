@@ -5,6 +5,6 @@ public class NioMain {
 //        BufferAPI bufferAPI = new BufferAPI();
 //        bufferAPI.test();
     	FileRW filerw = new FileRW();
-    	filerw.testFileRW();
+    	filerw.testMapRedirect();
     }
 }

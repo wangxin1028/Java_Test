@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 import java.nio.file.Paths;
@@ -15,10 +16,18 @@ public class FileRW {
 	}
 	public void testMapRedirect() {
 		try {
-			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala.jpg"),StandardOpenOption.READ);
-			FileChannel outchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala.jpg"),StandardOpenOption.READ,StandardOpenOption.WRITE);
+			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala1.jpg"),StandardOpenOption.READ);
+			FileChannel outchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala2.jpg"),StandardOpenOption.WRITE,StandardOpenOption.READ,StandardOpenOption.CREATE);
 			
-			inchannel.map(MapMode.READ_ONLY, 0, inchannel.size());
+			MappedByteBuffer inmap = inchannel.map(MapMode.READ_ONLY, 0, inchannel.size());
+			MappedByteBuffer outmap = outchannel.map(MapMode.READ_WRITE, 0, inchannel.size());
+			
+			byte[] buf = new byte[inmap.capacity()];
+			inmap.get(buf);
+			outmap.put(buf);
+			
+			inchannel.close();
+			outchannel.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -31,7 +40,7 @@ public class FileRW {
 		FileChannel inchannel = null;
 		FileChannel outchannel = null;
 		try {
-			in = new FileInputStream("conf/Koala.jpg");
+			in = new FileInputStream("conf/Koala1.jpg");
 			out = new FileOutputStream("Koala2.jpg");
 			inchannel = in.getChannel();
 			outchannel = out.getChannel();
