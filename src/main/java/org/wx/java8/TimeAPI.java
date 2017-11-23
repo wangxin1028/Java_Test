@@ -14,10 +14,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
+import org.junit.Test;
+
 public class TimeAPI {
 	/**
 	 * LocalDate LocalTime LocalDateTime
 	 */
+	@Test
 	public void testLocalDate() {
 		LocalDate ld = LocalDate.now(ZoneId.of("Asia/Kolkata"));
 		System.out.println(ld);
@@ -43,6 +46,7 @@ public class TimeAPI {
 	/**
 	 * Instant
 	 */
+	@Test
 	public void testInstant() {
 		Instant begin =Instant.now();
 		try {
@@ -58,6 +62,7 @@ public class TimeAPI {
 	/**
 	 * 非ISO标准格式的日期
 	 */
+	 @Test
 	public void testChronology() {
 		MinguoChronology taiwan = MinguoChronology.INSTANCE;
 		MinguoDate dateNow = taiwan.dateNow();
@@ -70,6 +75,7 @@ public class TimeAPI {
 	/**
 	 * 旧的API和新的之间的转换
 	 */
+	 @Test
 	public void testOldToNew() {
 		//旧的api
 		ZoneId zoneId = TimeZone.getDefault().toZoneId();

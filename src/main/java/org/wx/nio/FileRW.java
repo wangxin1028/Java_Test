@@ -5,16 +5,55 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.SortedMap;
+
+import org.junit.Test;
 
 public class FileRW {
-	public void testCharset() {
+	/**
+	 * 编码解码
+	 */
+	@Test
+	public void testBianma() {
+		Charset charset = Charset.forName("UTF-8");
 		
+		CharsetEncoder newEncoder = charset.newEncoder();
+		CharsetDecoder newDecoder = charset.newDecoder();
+		
+		
+		CharBuffer cb = CharBuffer.allocate(1024);
+		cb.put("你好");
+		cb.flip();
+		try {
+			ByteBuffer buffer = newEncoder.encode(cb);
+			
+			System.out.println(newDecoder.decode(buffer).toString());
+		} catch (CharacterCodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	@Test
+	public void testCharset() {
+		SortedMap<String,Charset> charsets = Charset.availableCharsets();
+		for(String charset : charsets.keySet()) {
+			System.out.println(charset);
+		}
+	}
+	/**
+	 * 分散聚集
+	 */
+	@Test
 	public void testFensanJuji() {
 		RandomAccessFile raf;
 		try {
@@ -30,7 +69,11 @@ public class FileRW {
 				System.out.println(new String(bb.array(),0,bb.limit()));
 			}
 			
+			FileChannel outchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","text.txt"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
+			outchannel.write(bbs);
 			
+			channel.close();
+			outchannel.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -38,6 +81,7 @@ public class FileRW {
 		
 		
 	}
+	@Test
 	public void testChannelIO() {
 		try {
 			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala1.jpg"),StandardOpenOption.READ);
@@ -53,6 +97,7 @@ public class FileRW {
 		}
 
 	}
+	@Test
 	public void testMapRedirect() {
 		try {
 			FileChannel inchannel = FileChannel.open(Paths.get(System.getProperty("user.dir"), "/conf","Koala1.jpg"),StandardOpenOption.READ);
@@ -73,6 +118,7 @@ public class FileRW {
 		}
 		
 	}
+	@Test
 	public void testFileRW() {
 		FileInputStream in = null;
 		FileOutputStream out = null;

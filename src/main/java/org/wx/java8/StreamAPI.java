@@ -1,12 +1,18 @@
 package org.wx.java8;
 
-import org.wx.entity.Country;
-import org.wx.entity.Persion;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
+
+import org.junit.Test;
+import org.wx.entity.Country;
+import org.wx.entity.Persion;
 
 /**
  * Stream api 测试
@@ -34,6 +40,7 @@ public class StreamAPI {
     /**
      * 中间操作
      */
+    @Test
     public void testZhongjian(){
         persions.stream().filter(p -> p.getAge()>15).forEach(System.out::println);
 
@@ -57,6 +64,7 @@ public class StreamAPI {
     /**
      * 终止操作
      */
+    @Test
     public void testZhonzhi(){
         DoubleSummaryStatistics statistics = persions.stream().collect(Collectors.summarizingDouble(t -> t.getAge()));
         System.out.println(statistics.getSum());
@@ -68,6 +76,7 @@ public class StreamAPI {
     /**
      * 获取stream的几种方式
      */
+    @Test
     public void createStream(){
         //stream.of
         Persion p1 = new Persion("p1",12);
@@ -93,7 +102,7 @@ public class StreamAPI {
         Stream<Persion> stream2 = plist.stream();
         System.out.println(stream2);
     }
-
+    @Test
     public void testParallel(){
         long sumary = LongStream.rangeClosed(0, 100000000000L).parallel().parallel().reduce(0, Long::sum);
         System.out.println(sumary);

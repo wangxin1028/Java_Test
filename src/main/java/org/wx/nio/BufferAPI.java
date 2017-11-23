@@ -3,7 +3,10 @@ package org.wx.nio;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 
+import org.junit.Test;
+
 public class BufferAPI {
+	@Test
 	public void test2() {
         String s = "abc";
         CharBuffer cb = CharBuffer.allocate(1024);
@@ -15,6 +18,7 @@ public class BufferAPI {
         }
         
 	}
+	@Test
     public void test1(){
         String s = "abc";
         ByteBuffer buffer = ByteBuffer.allocate(1024);
