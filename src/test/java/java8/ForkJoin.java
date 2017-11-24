@@ -1,4 +1,4 @@
-package org.wx.java8;
+package java8;
 
 import java.util.concurrent.RecursiveTask;
 
