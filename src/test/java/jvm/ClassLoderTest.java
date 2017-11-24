@@ -17,5 +17,6 @@ public class ClassLoderTest {
 		
 		ClassLoader classLoader = Class.forName("com.fxp.a.A").getClassLoader();
 		System.out.println(classLoader);
+		
 	}
 }
