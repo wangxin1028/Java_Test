@@ -57,6 +57,7 @@ public class NetNIO {
 						channel.read(bb);
 						bb.flip();
 						System.out.println(new String(bb.array(),0,bb.limit()));
+						bb.clear();
 					}
 					iterator.remove();
 				}
