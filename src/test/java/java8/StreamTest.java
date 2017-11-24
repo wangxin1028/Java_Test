@@ -17,7 +17,7 @@ import org.wx.entity.Persion;
 /**
  * Stream api 测试
  */
-public class StreamAPI {
+public class StreamTest {
     private static List<Persion> persions = null;
     static{
         Country chian = new Country("中国");

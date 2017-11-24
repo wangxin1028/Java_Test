@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 import org.junit.Test;
 
-public class NetNIO {
+public class TCPTest {
 	@Test
 	public void testNoBlockClient() {
 		try {
