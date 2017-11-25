@@ -8,7 +8,7 @@ public class ForkJoinTest {
     public static void main(String[] args) {
         Instant begin = Instant.now();
         ForkJoinPool pool = new ForkJoinPool();
-        ForkJoin fj = new ForkJoin(0,10000000000L);
+        ForkJoin fj = new ForkJoin(0,100000000000L);
         Long sum = pool.invoke(fj);
         System.out.println(sum);
         Instant end = Instant.now();
@@ -16,7 +16,7 @@ public class ForkJoinTest {
 
         begin = Instant.now();
         long count = 0 ;
-        for(long i = 1 ; i <= 10000000000L ; i++){
+        for(long i = 1 ; i <= 100000000000L ; i++){
             count+=i;
         }
         System.out.println(count);

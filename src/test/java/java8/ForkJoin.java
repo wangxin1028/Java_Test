@@ -21,7 +21,7 @@ public class ForkJoin extends RecursiveTask<Long> {
     @Override
     protected Long compute() {
         long mid = end-start;
-        if(mid<100000){
+        if(mid<100){
             long sum = 0 ;
             for(long i = start; i <= end ; i++){
                 sum+=i;
