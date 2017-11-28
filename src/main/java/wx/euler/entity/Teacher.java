@@ -1,4 +1,4 @@
-package org.wx.entity;
+package wx.euler.entity;
 
 import java.util.List;
 

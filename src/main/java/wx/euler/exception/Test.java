@@ -1,4 +1,4 @@
-package org.wx.exception;
+package wx.euler.exception;
 
 import java.io.IOException;
 

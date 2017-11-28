@@ -1,6 +1,6 @@
-package org.wx.dp;
+package wx.euler.dp;
 
-import org.wx.annotation.aop;
+import wx.euler.annotation.aop;
 
 public interface Calculate {
 	@aop

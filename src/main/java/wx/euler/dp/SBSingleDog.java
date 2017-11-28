@@ -1,4 +1,4 @@
-package org.wx.dp;
+package wx.euler.dp;
 
 public class SBSingleDog {
 	private SBSingleDog () {

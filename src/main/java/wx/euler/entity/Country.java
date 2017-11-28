@@ -1,4 +1,4 @@
-package org.wx.entity;
+package wx.euler.entity;
 
 public class Country {
     private String name;

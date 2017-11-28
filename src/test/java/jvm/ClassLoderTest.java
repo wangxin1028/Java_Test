@@ -1,7 +1,8 @@
 package jvm;
 
 import org.junit.Test;
-import org.wx.entity.Persion;
+
+import wx.euler.entity.Persion;
 
 public class ClassLoderTest {
 	@Test

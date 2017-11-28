@@ -1,4 +1,4 @@
-package org.wx.annotation;
+package wx.euler.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

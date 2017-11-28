@@ -11,8 +11,9 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import org.junit.Test;
-import org.wx.entity.Country;
-import org.wx.entity.Persion;
+
+import wx.euler.entity.Country;
+import wx.euler.entity.Persion;
 
 /**
  * Stream api 测试

@@ -1,4 +1,4 @@
-package org.wx.entity;
+package wx.euler.entity;
 
 public class Persion {
     private String name;

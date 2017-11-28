@@ -1,4 +1,4 @@
-package org.wx.dp;
+package wx.euler.dp;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -16,7 +16,7 @@ public class CalculateProxy {
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 				Object result = null;
-				if(Arrays.stream(method.getAnnotations()).anyMatch(t -> t.annotationType()==org.wx.annotation.aop.class)) {
+				if(Arrays.stream(method.getAnnotations()).anyMatch(t -> t.annotationType()==wx.euler.annotation.aop.class)) {
 					String name = method.getName();
 					System.out.println("Method name :"+name);
 					System.out.println("begin calculate,args is :"+Arrays.toString(args));

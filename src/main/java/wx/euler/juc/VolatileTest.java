@@ -1,4 +1,4 @@
-package org.wx.juc;
+package wx.euler.juc;
 
 public class VolatileTest {
     public static void main(String[] args) {
