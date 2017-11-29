@@ -10,7 +10,6 @@ public class InterfaceImpl1 implements Interface1, Interface2 {
 
 	@Override
 	public void defaultMethod() {
-		// TODO Auto-generated method stub
 		Interface1.super.defaultMethod();
 	}
 

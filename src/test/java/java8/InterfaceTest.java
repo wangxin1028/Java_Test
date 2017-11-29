@@ -5,7 +5,7 @@ public class InterfaceTest {
 	public static void main(String[] args) {
 		Interface1.staticMethod();
 		
-		InterfaceImpl1 imp1 = new InterfaceImpl1();
+		Interface2 imp1 = new InterfaceImpl1();
 		imp1.defaultMethod();
 	}
 }
