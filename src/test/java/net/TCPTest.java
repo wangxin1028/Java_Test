@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -47,6 +48,17 @@ public class TCPTest {
 			ServerSocket server = new ServerSocket();
 			server.bind(new InetSocketAddress(7379));
 			Socket accept = server.accept();
+
+			OutputStream outputStream = accept.getOutputStream();
+			PrintWriter print = new PrintWriter(outputStream);
+			print.println("HTTP/1.1 200 OK");
+			print.println("Server: nginx/1.10.1");
+			print.println("Date: Wed, 29 Nov 2017 09:04:06 GMT");
+			print.println("Content-Type: text/html;charset=UTF-8");
+			print.println();
+			print.println("大坏蛋");
+			print.flush();
+			
 			InputStream inputStream = accept.getInputStream();
 			InputStreamReader reader = new InputStreamReader(inputStream);
 			char[] buf = new char[1024];
@@ -54,10 +66,6 @@ public class TCPTest {
 			while((l=reader.read(buf))!=-1) {
 				System.out.println(new String(buf,0,l));
 			}
-			OutputStream outputStream = accept.getOutputStream();
-			OutputStreamWriter writer = new OutputStreamWriter(outputStream);
-			writer.write("大坏蛋");
-			writer.flush();
 			
 			accept.close();
 			server.close();
