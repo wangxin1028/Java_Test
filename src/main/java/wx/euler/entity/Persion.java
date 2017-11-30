@@ -1,5 +1,7 @@
 package wx.euler.entity;
 
+import wx.euler.annotation.NumberCheck;
+
 public class Persion {
     private String name;
     private int age;
@@ -31,8 +33,8 @@ public class Persion {
     public int getAge() {
         return age;
     }
-
-    public void setAge(int age) {
+    @NumberCheck(min=15,max=30)
+    public void setAge(int age) throws RuntimeException {
         this.age = age;
     }
 

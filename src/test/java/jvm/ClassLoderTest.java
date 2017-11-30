@@ -16,8 +16,13 @@ public class ClassLoderTest {
 		ClassLoader parent = classLoader2.getParent();
 		System.out.println(parent);
 		
-		ClassLoader classLoader = Class.forName("com.fxp.a.A").getClassLoader();
+		ClassLoader classLoader = Class.forName("jvm.ClassLoderTest").getClassLoader();
 		System.out.println(classLoader);
 		
+	}
+	@Test
+	public void test() throws ClassNotFoundException {
+		ClassLoader forName = Class.forName("java.lang.String").getClassLoader();
+		System.out.println(forName);
 	}
 }
