@@ -1,4 +1,4 @@
-package org.wx.juc;
+package wx.euler.juc;
 
 import java.util.concurrent.*;
 

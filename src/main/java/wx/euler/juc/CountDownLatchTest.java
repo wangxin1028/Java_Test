@@ -1,4 +1,4 @@
-package org.wx.juc;
+package wx.euler.juc;
 
 import java.time.Duration;
 import java.time.Instant;
