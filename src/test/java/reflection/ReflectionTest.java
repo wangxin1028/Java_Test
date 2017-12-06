@@ -5,8 +5,6 @@ import java.lang.reflect.Modifier;
 
 import org.junit.Test;
 
-import wx.euler.annotation.NumberCheck;
-
 public class ReflectionTest {
 	@Test
 	public void testAnnotation() throws ClassNotFoundException, NoSuchMethodException, SecurityException {

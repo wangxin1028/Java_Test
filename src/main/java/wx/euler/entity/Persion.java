@@ -1,6 +1,6 @@
 package wx.euler.entity;
 
-import wx.euler.annotation.NumberCheck;
+import reflection.NumberCheck;
 
 public class Persion {
     private String name;

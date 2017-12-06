@@ -1,4 +1,4 @@
-package wx.euler.util;
+package wx.euler.juc;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
