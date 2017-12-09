@@ -7,9 +7,9 @@ import java.util.concurrent.TimeUnit;
 
 public class ScheduleThreadPool {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(4);
+		ScheduledExecutorService scheduledThreadPool = Executors.newSingleThreadScheduledExecutor();
 		scheduledThreadPool.scheduleAtFixedRate(()->{
 			System.out.println("————————————————————————————————————————————————————————————————————————————");
-		}, 0, 1, TimeUnit.SECONDS);
+		}, 1, 1, TimeUnit.SECONDS);
 	}
 }
