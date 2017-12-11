@@ -1,5 +1,7 @@
 package jvm;
 
+import java.io.InputStream;
+
 import org.junit.Test;
 
 import wx.euler.entity.Persion;
@@ -24,5 +26,10 @@ public class ClassLoderTest {
 	public void test() throws ClassNotFoundException {
 		ClassLoader forName = Class.forName("java.lang.String").getClassLoader();
 		System.out.println(forName);
+	}
+	@Test
+	public void test1() {
+		InputStream inputStream = getClass().getResourceAsStream("ClassLoderTest.class");
+		System.out.println(inputStream);
 	}
 }
