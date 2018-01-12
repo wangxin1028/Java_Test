@@ -10,7 +10,7 @@ public class Test {
 	    try {
 	      fun1();
 	    } catch (IOException e) {
-	        throw new RuntimeException("level 2 exception", e);
+	        throw new RuntimeException("level 2 exception",e);
 	    }
 	  }
 	  public static void main(String[] args) {
