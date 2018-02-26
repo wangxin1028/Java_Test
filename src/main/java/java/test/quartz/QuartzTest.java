@@ -1,4 +1,4 @@
-package wx.euler.quartz;
+package java.test.quartz;
 
 import static org.quartz.JobBuilder.newJob;
 

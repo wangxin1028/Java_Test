@@ -1,4 +1,4 @@
-package wx.euler.juc;
+package java.test.juc;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

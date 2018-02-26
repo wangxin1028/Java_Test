@@ -1,10 +1,9 @@
 package jvm;
 
 import java.io.InputStream;
+import java.test.entity.Persion;
 
 import org.junit.Test;
-
-import wx.euler.entity.Persion;
 
 public class ClassLoderTest {
 	@Test

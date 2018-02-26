@@ -1,4 +1,4 @@
-package wx.euler.quartz;
+package java.test.quartz;
 
 import java.time.LocalDateTime;
 

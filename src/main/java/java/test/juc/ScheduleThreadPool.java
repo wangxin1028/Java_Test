@@ -1,4 +1,4 @@
-package wx.euler.juc;
+package java.test.juc;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package wx.euler.entity;
+package java.test.entity;
 
 public class Student extends Persion{
     private String schoolNum;
