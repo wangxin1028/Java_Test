@@ -1,7 +1,5 @@
 package java8;
 
-import java.test.entity.Country;
-import java.test.entity.Persion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.DoubleSummaryStatistics;
@@ -13,6 +11,9 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import org.junit.Test;
+
+import test.java.entity.Country;
+import test.java.entity.Persion;
 
 /**
  * Stream api 测试

@@ -1,4 +1,4 @@
-package java.test.entity;
+package test.java.entity;
 
 
 public class Persion {

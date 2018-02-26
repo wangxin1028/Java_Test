@@ -1,4 +1,4 @@
-package java.test.juc;
+package test.java.juc;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

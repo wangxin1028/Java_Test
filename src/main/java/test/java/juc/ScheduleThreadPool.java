@@ -1,4 +1,4 @@
-package java.test.juc;
+package test.java.juc;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;

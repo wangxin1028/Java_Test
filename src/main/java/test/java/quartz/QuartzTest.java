@@ -1,4 +1,4 @@
-package java.test.quartz;
+package test.java.quartz;
 
 import static org.quartz.JobBuilder.newJob;
 

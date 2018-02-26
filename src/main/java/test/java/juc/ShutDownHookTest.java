@@ -1,4 +1,4 @@
-package java.test.juc;
+package test.java.juc;
 
 public class ShutDownHookTest {
     public static void main(String[] args) {

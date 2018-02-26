@@ -1,4 +1,4 @@
-package java.test.quartz;
+package test.java.quartz;
 
 import java.time.LocalDateTime;
 
