@@ -1,5 +1,6 @@
 package test.java.entity;
 
+import reflection.NumberCheck;
 
 public class Persion {
     private String name;
@@ -32,6 +33,7 @@ public class Persion {
     public int getAge() {
         return age;
     }
+    @NumberCheck(min=15,max=30)
     public void setAge(int age) throws RuntimeException {
         this.age = age;
     }

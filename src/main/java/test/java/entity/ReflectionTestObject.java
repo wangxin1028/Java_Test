@@ -1,6 +1,6 @@
 package test.java.entity;
 
-public class ReflectionTestObject {
+public class ReflectionTestObject extends ReflectionTestParent implements ReflectionTestInterface<String>{
 	private int filed1;
 	int filed2;
 	protected int filed3;
