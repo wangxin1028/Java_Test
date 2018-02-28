@@ -14,7 +14,7 @@ public class Print {
     public void printA() {
         lock.lock();
         try {
-            if (num != 1) {
+            while (num != 1) {
                 try {
                     a.await();
                 } catch (InterruptedException e) {
@@ -33,7 +33,7 @@ public class Print {
     public void printB() {
         lock.lock();
         try {
-            if (num != 2) {
+        	while (num != 2) {
                 try {
                     b.await();
                 } catch (InterruptedException e) {
@@ -52,7 +52,7 @@ public class Print {
     public void printC() {
         lock.lock();
         try {
-            if (num != 3) {
+        	while (num != 3) {
                 try {
                     c.await();
                 } catch (InterruptedException e) {
