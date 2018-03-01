@@ -21,6 +21,7 @@ public class ThreadPoolTest {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        //程序结束前，应该把连接池关闭，进程不结束
         service.shutdown();
     }
 }

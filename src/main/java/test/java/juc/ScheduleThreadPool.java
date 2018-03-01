@@ -10,6 +10,6 @@ public class ScheduleThreadPool {
 		ScheduledExecutorService scheduledThreadPool = Executors.newSingleThreadScheduledExecutor();
 		scheduledThreadPool.scheduleAtFixedRate(()->{
 			System.out.println("————————————————————————————————————————————————————————————————————————————");
-		}, 1, 1, TimeUnit.SECONDS);
+		}, 10, 1, TimeUnit.SECONDS);
 	}
 }

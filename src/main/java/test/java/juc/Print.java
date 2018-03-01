@@ -5,6 +5,31 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Print {
+    public static void main(String[] args) {
+        Print p = new Print();
+        new Thread(
+                () -> {
+                    for (int i = 0 ; i < 10 ; i++){
+                        p.printA();
+                    }
+                }
+        ).start();
+        new Thread(
+                () -> {
+                    for (int i = 0 ; i < 10 ; i++){
+                        p.printB();
+                    }
+                }
+        ).start();
+        new Thread(
+                () -> {
+                    for (int i = 0 ; i < 10 ; i++){
+                        p.printC();
+                    }
+                }
+        ).start();
+    }
+    
     private Lock lock = new ReentrantLock();
     private Condition a = lock.newCondition();
     private Condition b = lock.newCondition();
