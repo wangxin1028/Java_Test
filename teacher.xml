@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teachers>
+  <teacher>
+    <name>孔子</name>
+  </teacher>
+  <teacher>
+    <name>孟子</name>
+  </teacher>
+</teachers>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages>
+	<page>
+		&lt;html&gt;
+			&lt;head&gt;
+				&lt;title&gt;&lt;/title&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	</page>
+	<page>
+		<![CDATA[
+			<html>
+				<head>
+					<title></title>
+				</head>
+				<body></body>
+			</html>
+		]]>
+	</page>
+</pages>
