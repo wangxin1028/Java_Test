@@ -1,8 +1,6 @@
 package code.explore.algorithm;
 
-import org.omg.CORBA.IRObject;
-
-public class Quicksort {
+public class QuickSort {
     public static void sort(int[] array){
         quickSort(array,0,array.length-1);
     }
