@@ -13,7 +13,7 @@ public class HeapSort {
     public static void sort(int[] array) {
         int size = array.length;
         while (size > 2) {
-            //所有父节点
+            //从下往上所有父节点
             for (int i = (size-1) / 2; i >= 1; i--) {
                 //选出最大儿子
                 int maxIndex = i * 2; //左儿子
@@ -27,7 +27,7 @@ public class HeapSort {
                     array[maxIndex] = array[maxIndex] ^ array[i];
                 }
             }
-            //经过一轮循环，最大的数已经是根节点
+            //经过一轮循环，最大的数已经是根节点 根节点和最后一个节点交换
             array[1] = array[1] ^ array[size-1];
             array[size - 1] = array[1] ^ array[size-1];
             array[1] = array[1] ^ array[size-1];
